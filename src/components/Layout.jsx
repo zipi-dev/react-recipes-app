@@ -9,9 +9,15 @@ export default function Layout() {
   return (
     <>
       <nav style={{ padding: 12, borderBottom: "1px solid #ccc" }}>
+        
+        <NavLink to="/login/controlled" style={linkStyle}>Controlled</NavLink>
+        <NavLink to="/login/uncontrolled" style={linkStyle}>Uncontrolled</NavLink>
+        <NavLink to="/login/rhf" style={linkStyle}>RHF</NavLink>
+
         <NavLink to="/" end style={linkStyle}>בית</NavLink>
         <NavLink to="/recipes" style={linkStyle}>מתכונים</NavLink>
       </nav>
+
       <main style={{ padding: 16 }}>
         <Outlet />
       </main>
