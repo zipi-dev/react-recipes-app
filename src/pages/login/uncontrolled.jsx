@@ -1,11 +1,17 @@
 import { useNavigate } from 'react-router';
+import { login } from '../../services/auth';
+
 
 export default function LoginUncontrolled() {
   const navigate = useNavigate();
 
   const handleLogin = (formData) => {
     const data = Object.fromEntries(formData);
-    console.log(data); // { email: '...', password: '...' }
+    const user = login(data);
+
+    if (user) {
+      navigate('/recipes');
+    }
   };
 
   return (
